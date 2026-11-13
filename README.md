@@ -1,4 +1,4 @@
-# goda-cmp-source-maccy
+# goda-cmp-ext-maccy.vim
 
 [Maccy](https://github.com/p0deje/Maccy) completion for [goda-cmp.vim](https://github.com/Shougo/goda-cmp.vim).
 
@@ -19,13 +19,13 @@ The source is a Go package that your goda-cmp configuration imports.
 
 ```sh
 cd ~/.config/nvim/goda-cmp
-go get github.com/airRnot1106/goda-cmp-source-maccy
+go get github.com/airRnot1106/goda-cmp-ext-maccy.vim
 ```
 
 ## Configuration
 
 ```go
-import "github.com/airRnot1106/goda-cmp-source-maccy/ext/source/maccy"
+import "github.com/airRnot1106/goda-cmp-ext-maccy.vim/ext/source/maccy"
 
 b.AddSource(maccy.New(maccy.Params{
 	RecentMs:            300000,
@@ -42,4 +42,4 @@ b.AddSource(maccy.New(maccy.Params{
 
 Add `"maccy"` to `Sources`, then rebuild with `:call goda_cmp#build()`.
 
-See `:help goda-cmp-source-maccy`.
+See `:help goda-cmp-ext-maccy`.

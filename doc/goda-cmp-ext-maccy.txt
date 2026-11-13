@@ -1,24 +1,24 @@
-*goda_cmp_source_maccy.txt*	Maccy completion for goda-cmp.vim
+*goda-cmp-ext-maccy.txt*	Maccy completion for goda-cmp.vim
 
 Author: airRnot
 License: MIT license
 
-CONTENTS                                     *goda-cmp-source-maccy-contents*
+CONTENTS                                        *goda-cmp-ext-maccy-contents*
 
-Introduction		|goda-cmp-source-maccy-introduction|
-Install			|goda-cmp-source-maccy-install|
-Examples		|goda-cmp-source-maccy-examples|
-Params			|goda-cmp-source-maccy-params|
+Introduction		|goda-cmp-ext-maccy-introduction|
+Install			|goda-cmp-ext-maccy-install|
+Examples		|goda-cmp-ext-maccy-examples|
+Params			|goda-cmp-ext-maccy-params|
 
 ==============================================================================
-INTRODUCTION                             *goda-cmp-source-maccy-introduction*
+INTRODUCTION                                *goda-cmp-ext-maccy-introduction*
 
-                                                      *goda-cmp-source-maccy*
+                                                         *goda-cmp-ext-maccy*
 A goda-cmp.vim source for the recent clips of Maccy, the macOS clipboard
 manager.  The source is named "maccy".
 
 ==============================================================================
-INSTALL                                       *goda-cmp-source-maccy-install*
+INSTALL                                          *goda-cmp-ext-maccy-install*
 
 It needs goda-cmp.vim, goda.vim, Maccy and Neovim.
 
@@ -28,12 +28,12 @@ https://github.com/p0deje/Maccy
 
 Add the Go package to your configuration module: >
 
-	go get github.com/airRnot1106/goda-cmp-source-maccy
+	go get github.com/airRnot1106/goda-cmp-ext-maccy.vim
 <
 ==============================================================================
-EXAMPLES                                     *goda-cmp-source-maccy-examples*
+EXAMPLES                                        *goda-cmp-ext-maccy-examples*
 >go
-	import "github.com/airRnot1106/goda-cmp-source-maccy/ext/source/maccy"
+	import "github.com/airRnot1106/goda-cmp-ext-maccy.vim/ext/source/maccy"
 
 	b.AddSource(maccy.New(maccy.Params{
 		RecentMs: 300000,
@@ -44,7 +44,7 @@ EXAMPLES                                     *goda-cmp-source-maccy-examples*
 Add "maccy" to `Sources` and call |goda_cmp#build()|.
 
 ==============================================================================
-PARAMS                                         *goda-cmp-source-maccy-params*
+PARAMS                                            *goda-cmp-ext-maccy-params*
 
 The parameters are also accepted in sourceParams with these JSON names.
 

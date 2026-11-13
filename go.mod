@@ -1,4 +1,4 @@
-module github.com/airRnot1106/goda-cmp-source-maccy
+module github.com/airRnot1106/goda-cmp-ext-maccy.vim
 
 go 1.26.0
 
