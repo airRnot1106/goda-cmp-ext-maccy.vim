@@ -3,8 +3,8 @@ module github.com/airRnot1106/goda-cmp-ext-maccy.vim
 go 1.26.0
 
 require (
-	github.com/Shougo/goda-cmp.vim v0.3.3-0.20261106074959-4f0c30e25dd3
-	github.com/Shougo/goda.vim v0.7.2
+	github.com/Shougo/goda-cmp.vim v0.6.0
+	github.com/Shougo/goda.vim v0.9.0
 	modernc.org/sqlite v1.61.1
 )
 
