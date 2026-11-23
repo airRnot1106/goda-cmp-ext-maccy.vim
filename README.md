@@ -40,6 +40,19 @@ b.AddSource(maccy.New(maccy.Params{
 }))
 ```
 
-Add `"maccy"` to `Sources`, then rebuild with `:call goda_cmp#build()`.
+Add `"maccy"` to `Sources`. A clip is inserted at the cursor and does not replace the typed word, so the source needs no filter and a `MinAutoCompleteLength` of 0:
+
+```go
+SourceOptions: map[string]cmp.SourceOption{
+	"maccy": {
+		Matchers:              []string{},
+		Sorters:               []string{},
+		Converters:            []string{},
+		MinAutoCompleteLength: new(0),
+	},
+},
+```
+
+Then rebuild with `:call goda_cmp#build()`.
 
 See `:help goda-cmp-ext-maccy`.

@@ -181,11 +181,16 @@ func TestItemsKeepTheFirstLineAsWordAndTheWholeValueAsInfo(t *testing.T) {
 	}
 }
 
-func TestGatherStartsAtTheKeyword(t *testing.T) {
+func TestGatherStartsAtTheCursor(t *testing.T) {
 	f := newFixture(t)
-	g, err := f.source(Params{}).Gather(context.Background(), nil, &cmp.Context{Input: "x = fo"})
-	if err != nil || g.Start != 4 {
+	s := f.source(Params{})
+	c := &cmp.Context{Input: "x = fo"}
+	g, err := s.Gather(context.Background(), nil, c)
+	if err != nil || g.Start != 6 {
 		t.Errorf("start %d, err %v", g.Start, err)
+	}
+	if pos := s.CompletePosition(context.Background(), nil, c); pos != 6 {
+		t.Errorf("complete position %d", pos)
 	}
 }
 

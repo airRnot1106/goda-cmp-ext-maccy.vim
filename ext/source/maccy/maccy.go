@@ -76,6 +76,13 @@ func (s *source) WithParams(p cmp.Params) (any, error) {
 	return &source{p: np, now: s.now, cache: &clipCache{}, uses: s.uses}, nil
 }
 
+// CompletePosition is the cursor: a clip is inserted as a paste is, and the
+// typed word is kept. The engine keys its cache on this position, so a list
+// gathered before the last keystroke never starts before it.
+func (*source) CompletePosition(_ context.Context, _ sdk.Host, c *cmp.Context) int {
+	return len(c.Input)
+}
+
 func (s *source) Gather(ctx context.Context, _ sdk.Host, c *cmp.Context) (cmp.Gathered, error) {
 	now := s.now()
 	clips, err := s.cache.get(now, time.Duration(s.p.CacheTtlMs)*time.Millisecond, func() ([]clip, error) {
@@ -97,7 +104,7 @@ func (s *source) Gather(ctx context.Context, _ sdk.Host, c *cmp.Context) (cmp.Ga
 			UserData: cl,
 		})
 	}
-	return cmp.Gathered{Start: c.KeywordStart(), Items: items}, nil
+	return cmp.Gathered{Start: len(c.Input), Items: items}, nil
 }
 
 // OnCompleteDone counts the use and inserts the lines after the first one,
