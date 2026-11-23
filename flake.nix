@@ -16,7 +16,13 @@
     in
     {
       devShells = forAllSystems (pkgs: {
-        default = pkgs.mkShell { packages = [ pkgs.go_1_26 ]; };
+        default = pkgs.mkShell {
+          packages = [
+            pkgs.go_1_26
+            pkgs.neovim
+            pkgs.python3
+          ];
+        };
       });
     };
 }
